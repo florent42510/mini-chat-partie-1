@@ -1,3 +1,8 @@
+<?php
+use \Colors\RandomColor;
+include 'vendor/autoload.php';
+?>
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -9,17 +14,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href= "mini.css">
     <title>Mini-Chat</title>
-
+    
    
   </head>
   <body>
-
-  <div class="container ">
-    <div class="row col-12 offset-1 text-center">
+ 
+  <div id="container" class="container-fluid">
+    <div class="row col-4  text-center">
        <div class="jumbotron fond text-white">
           <h1 class="display-4">Hey, bienvenue dans ce mini-chat !</h1>
           <p class="lead">Écris dès maintenant ton message</p>
-          <form action="post.php" method = "post">
+          <form action="post.php" method = "post" onsubmit = "envoiMessage(event, this)">
             <div class="form-group">
                 <label for="exampleInputEmail1">Pseudo</label>
                 <input 
@@ -34,19 +39,21 @@
                 <label for="exampleInputPassword1">Message</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" name= "message" placeholder="Tapez votre message">
             </div>
-                <button type="submit" class="btn btn-info">Envoyer</button>
+                <button type="submit" class="btn btn-warning">Envoyer</button>
           </form>
-         </div>
+        </div>
+
      </div>
+    <div id= "text" class="row col-8 ">
+    <?php include 'store.php'; ?>
+    </div>
   </div>
+  
+  <audio controls="controls">
+        <source src="Kavinsky.mp3"  autostart="True"controller="false"  type="audio/mp3">
+       
+    </audio>
 
-
-<?php
-
-include 'store.php';
-
-
-?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -58,5 +65,9 @@ include 'store.php';
 
     <script type="text/javascript" src="mini.js"></script>      
   
+
+    <!--Récupération de l'adresse IP des visiteurs -->
+
+ 
   </body>
 </html>

@@ -1,7 +1,21 @@
 
 .fond{
-background-image: url(https://media.giphy.com/media/3oz8xYPjj369k1PJcI/giphy.gif)
+background-image: url(https://c.wallhere.com/photos/2c/77/1366x768_px_city_landscape_los_angeles_Moon_Night_View-513952.jpg!d);
+opacity: 0.8;
+border-radius: 5ch;
+
 }
 body{
-    background-color: rgb(103, 243, 236);
+    background-image: url(https://media1.giphy.com/media/aRZ4vTsHnyW6A/giphy.gif);
+    background-size: cover;
+
+}
+
+#container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5vh;
+}
+#text{
+    text-align: right;
 }
